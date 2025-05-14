@@ -3,9 +3,9 @@ import { Quicksand } from "next/font/google";
 import "./globals.css";
 const quicksand = Quicksand({
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"], // Choose weights you need
-  variable: "--font-quicksand", // Optional: for Tailwind integration
-  display: "swap", // Optional: improves performance
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-quicksand",
+  display: "swap",
 });
 
 export const metadata: Metadata = {

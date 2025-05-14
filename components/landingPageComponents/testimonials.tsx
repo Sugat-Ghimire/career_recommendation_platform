@@ -1,6 +1,6 @@
 "use client";
 
-import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
+import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
@@ -109,7 +109,6 @@ export default function Testimonials() {
               </div>
               <div className="flex items-center">
                 <Avatar className="h-10 w-10 mr-3">
-                  <AvatarImage src="/placeholder.svg" alt={testimonial.name} />
                   <AvatarFallback className="bg-purple-200 text-purple-700">
                     {testimonial.avatar}
                   </AvatarFallback>
