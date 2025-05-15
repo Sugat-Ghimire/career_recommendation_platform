@@ -37,7 +37,7 @@ export default function HeroSection() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.6 }}
             >
-              <Button className="bg-purple-700 hover:bg-purple-800 text-lg px-8 py-6 h-auto">
+              <Button className="bg-purple-700 hover:bg-purple-800 text-lg px-6 py-4 h-auto">
                 Try it Now
               </Button>
             </motion.div>
