@@ -1,8 +1,8 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import Image from "next/image";
 import { motion } from "framer-motion";
+import BrainNetworkAnimation from "../animations/BrainNetworkAnimation";
 
 export default function HeroSection() {
   return (
@@ -49,14 +49,7 @@ export default function HeroSection() {
             transition={{ duration: 0.7, delay: 0.3, ease: "easeOut" }}
           >
             <div className="relative w-full max-w-md h-80 md:h-96">
-              <Image
-                src="/pch.png?height=500&width=500"
-                alt="AI Career Guidance Illustration"
-                fill
-                className="object-contain"
-                priority
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-              />
+              <BrainNetworkAnimation />
             </div>
           </motion.div>
         </div>
