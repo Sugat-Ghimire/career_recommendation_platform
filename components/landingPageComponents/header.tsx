@@ -75,7 +75,7 @@ export default function Header() {
           transition={{ duration: 0.5, delay: 0.4 }}
         >
           <motion.button
-            className="bg-purple-700 hover:bg-purple-800 px-4 py-2 rounded-md text-white"
+            className="bg-purple-700 hover:bg-purple-800 px-4 py-2 rounded-4xl text-white"
             whileHover={{ scale: 1.04 }}
             whileTap={{ scale: 0.94 }}
           >
