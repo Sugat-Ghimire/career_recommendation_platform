@@ -1,21 +1,40 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { X, Menu } from "lucide-react";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const isScrolled = window.scrollY > 10;
+      if (isScrolled !== scrolled) {
+        setScrolled(isScrolled);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [scrolled]);
 
   return (
     <motion.header
-      className="border-b bg-white sticky top-0 z-10"
+      className={`sticky top-0 z-10 transition-all duration-300 ${
+        scrolled
+          ? "bg-white/50 backdrop-blur-md"
+          : "bg-white border-b"
+      }`}
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.5, ease: "easeOut" }}
     >
-      <div className="container mx-auto px-4 py-4 flex items-center justify-between">
+      <div className="container mx-auto px-4 py-4 flex items-center justify-between ">
         <motion.div
           className="flex items-center"
           initial={{ opacity: 0 }}
@@ -97,7 +116,9 @@ export default function Header() {
 
       {isMenuOpen && (
         <motion.div
-          className="md:hidden bg-white py-4 px-4 border-t"
+          className={`md:hidden py-4 px-4 border-t ${
+            scrolled ? "bg-white/70 backdrop-blur-md" : "bg-white"
+          }`}
           initial={{ opacity: 0, height: 0 }}
           animate={{ opacity: 1, height: "auto" }}
           exit={{ opacity: 0, height: 0 }}
