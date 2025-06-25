@@ -1,13 +1,14 @@
 import type { Metadata } from "next";
-import { Quicksand } from "next/font/google";
+import { Poppins } from "next/font/google";
 import "./globals.css";
-const quicksand = Quicksand({
+
+
+const poppins = Poppins({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
-  variable: "--font-quicksand",
+  variable: "--font-poppins",
   display: "swap",
 });
-
 export const metadata: Metadata = {
   title: "career recommendation platform",
   description:
@@ -21,7 +22,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${quicksand.className}`}>{children}</body>
+      <body className={`${poppins.className}`}>{children}</body>
     </html>
   );
 }
