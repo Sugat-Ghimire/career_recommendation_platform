@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { X, Menu } from "lucide-react";
+import LogoAnimation from "../animations/LogoAnimation";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -43,11 +44,11 @@ export default function Header() {
         >
           <Link href="/" className="flex items-center">
             <motion.div
-              className="w-10 h-10 rounded-md bg-purple-700 flex items-center justify-center text-white font-bold text-xl mr-2"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
+              className="mr-2"
+              whileHover={{ rotate: 30 }}
+
             >
-              CR
+              <LogoAnimation size={40} />
             </motion.div>
             <span className="text-xl font-semibold hidden sm:inline-block">
               CareerR
